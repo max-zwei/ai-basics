@@ -58,9 +58,9 @@ class Frontier:
             # select the last node
             return self.frontier[-1]
         
-        # broadth-first search
+        # breadth-first search
         if self.search_algorithm == "BFS":
-            # broadth-first search -> Last node in, first node out
+            # breadth-first search -> Last node in, first node out
             # select the first node
             return self.frontier[0]
 

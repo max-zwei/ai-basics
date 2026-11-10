@@ -28,7 +28,7 @@ def test_planner(planner_name, planning_function, start_state):
         print("- correct plan:", Planning_Problem.goal(state))
         print("- states visited:",step_count)
         print("- execution time:",time_ns, "ns")
-        print("- toasing world time:", state["time"])
+        print("- toasting world time:", state["time"])
 
 
 
@@ -50,7 +50,3 @@ if __name__ == "__main__":
     test_all({'toaster_has_power': True, 'toaster_is_on': False, 'bread_location': 'toaster', 'bread_state': 'untoasted', 'time': 0})
     test_all({'toaster_has_power': True, 'toaster_is_on': True, 'bread_location': 'plate', 'bread_state': 'untoasted', 'time': 0})
     test_all({'toaster_has_power': False, 'toaster_is_on': True, 'bread_location': 'plate', 'bread_state': 'untoasted', 'time': 0})
-
-
-
-
