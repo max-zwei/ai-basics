@@ -1,5 +1,8 @@
-list = [[10,0,1], [14,0,1], [9,1,1]]
+from itertools import product
 
-list.sort(reverse=True)
+neighbors = [
+                dict(zip(("wait duration", "toast duration", "power"), offsets))
+                for offsets in product((-1, 0, 1), repeat=3)
+                ]
 
-print(list)
+print(neighbors)
