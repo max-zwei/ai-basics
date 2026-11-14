@@ -1,7 +1,5 @@
 
 from copy import deepcopy
-from tabnanny import check
-from turtle import right
 from logic.biconditional import Biconditional
 from logic.implication import Implication
 from logic.negation import Not
@@ -71,6 +69,23 @@ def forward_search(knowledge, query):
     knowledge_base = deepcopy(knowledge)
 
     # TODO: implement me
-
-
     
+    # use check_proven to check knowledge against the query, return the result of check_proven if it is True or False
+    # if return None, use get_inferrable_knowledge to find new conclusions
+    
+    while check_proven(knowledge_base, query) == None:
+        
+        new_knowledge = get_inferrable_knowledge(knowledge_base)
+        
+        if len(new_knowledge) > 0:
+            
+            # add new conclusions to knowledge_base and run again
+            for news in new_knowledge:
+                knowledge_base.add(news)
+        
+        else:
+            
+            # if nothing can be inferred the query is unresolved, return None
+            return None
+        
+    return check_proven(knowledge_base, query)
